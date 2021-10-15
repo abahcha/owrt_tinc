@@ -49,3 +49,4 @@ uci commit firewall
 #install tinc package
 opkg update
 opkg install tinc
+/etc/init.d/tinc enable

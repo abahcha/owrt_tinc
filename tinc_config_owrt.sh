@@ -25,3 +25,13 @@ cat <<EOF>>hosts/router
 Address = your-ddns-name (or static "white" IP)
 Subnet = 192.168.1.0/24
 EOF
+
+uci batch <<EOF 
+set tinc.tetris=tinc-net
+set tinc.tetris.enabled='1'
+set tinc.tetris.logfile='/tmp/log/tinc.log'
+set tinc.router=tinc-host
+set tinc.router.enabled='1'
+set tinc.router.net='tetris'
+EOF
+uci commit
